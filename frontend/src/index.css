@@ -1,0 +1,17 @@
+:root {
+  --enviro-navy: #0a2f5c;
+  --enviro-gold: #f4c542;
+  --text-dark: #1a1a1a;
+  --bg-light: #f7f8fa;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
