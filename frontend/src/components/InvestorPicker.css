@@ -1,0 +1,31 @@
+.investor-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.investor-picker label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.investor-picker select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  min-width: 220px;
+}
+
+.investor-picker--loading,
+.investor-picker--error {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.investor-picker--error {
+  color: #b00020;
+}

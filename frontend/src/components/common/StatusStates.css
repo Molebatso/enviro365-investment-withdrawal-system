@@ -1,0 +1,23 @@
+.status-state {
+  padding: 1.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.status-state--loading {
+  background-color: #eef2f7;
+  color: #44546a;
+}
+
+.status-state--error {
+  background-color: #fdecea;
+  color: #b00020;
+  border: 1px solid #f5c2c0;
+}
+
+.status-state--empty {
+  background-color: #f7f8fa;
+  color: #666;
+  border: 1px dashed #ccc;
+}

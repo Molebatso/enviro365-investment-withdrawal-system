@@ -1,0 +1,78 @@
+.withdrawal-form-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 480px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.withdrawal-form-card h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+  color: var(--enviro-navy);
+  border-bottom: 2px solid var(--enviro-gold);
+  padding-bottom: 0.5rem;
+}
+
+.withdrawal-balance-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-field select,
+.form-field input {
+  padding: 0.5rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.withdrawal-form-card button {
+  background-color: var(--enviro-navy);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.withdrawal-form-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-message {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.form-message--error {
+  background-color: #fdecea;
+  color: #b00020;
+  border: 1px solid #f5c2c0;
+}
+
+.form-message--success {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+  border: 1px solid #b7e1c1;
+}

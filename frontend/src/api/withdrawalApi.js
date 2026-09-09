@@ -2,8 +2,6 @@ import httpClient from './httpClient';
 
 /**
  * Withdrawal-related API calls.
- * Implemented against the real backend endpoints in Phase 10
- * (Integration) once the withdrawal endpoints exist.
  */
 
 export const submitWithdrawal = (investorId, withdrawalRequest) => {

@@ -1,29 +1,60 @@
+import { useState } from 'react';
+import InvestorPicker from './components/InvestorPicker';
+import Dashboard from './components/Dashboard/Dashboard';
+import WithdrawalForm from './components/WithdrawalForm/WithdrawalForm';
+import WithdrawalHistory from './components/WithdrawalHistory/WithdrawalHistory';
 import './App.css';
 
+const TABS = [
+  { key: 'dashboard', label: 'Dashboard' },
+  { key: 'withdrawals', label: 'Withdrawals' },
+  { key: 'history', label: 'History' },
+];
+
 /**
- * Temporary placeholder shell.
- *
- * This confirms the frontend project runs and can reach the backend
- * health check. The real Dashboard / Withdrawal Form / History pages
- * are built in Phase 9 of the roadmap, once the backend APIs exist.
+ * Top-level app shell: header, investor picker, and simple tab-based
+ * navigation between the three pages. A router library (react-router)
+ * was deliberately left out - three fixed, non-nested tabs with no
+ * need for deep-linkable URLs don't justify the extra dependency.
  */
 function App() {
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [selectedInvestorId, setSelectedInvestorId] = useState(null);
+
   return (
     <div className="app-shell">
       <header className="app-header">
         <h1>Enviro365 Investments</h1>
         <nav>
-          <span>Dashboard</span>
-          <span>Withdrawals</span>
-          <span>History</span>
+          {TABS.map((tab) => (
+            <button
+              key={tab.key}
+              className={`nav-link ${activeTab === tab.key ? 'nav-link--active' : ''}`}
+              onClick={() => setActiveTab(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
         </nav>
       </header>
 
+      <InvestorPicker selectedInvestorId={selectedInvestorId} onSelect={setSelectedInvestorId} />
+
       <main className="app-main">
-        <p>
-          Frontend scaffold is running. Backend integration and real pages
-          are added in later phases.
-        </p>
+        {!selectedInvestorId ? (
+          <p>Select an investor to get started.</p>
+        ) : (
+          <>
+            {activeTab === 'dashboard' && <Dashboard investorId={selectedInvestorId} />}
+            {activeTab === 'withdrawals' && (
+              <WithdrawalForm
+                investorId={selectedInvestorId}
+                onWithdrawalSuccess={() => setActiveTab('history')}
+              />
+            )}
+            {activeTab === 'history' && <WithdrawalHistory investorId={selectedInvestorId} />}
+          </>
+        )}
       </main>
     </div>
   );
