@@ -38,10 +38,6 @@ marked complete unless it actually exists in the codebase and works.
 | No raw stack traces exposed | ✅ | `GlobalExceptionHandler.handleUnexpectedError` | Generic message returned; full detail only in server logs |
 
 ## Known Gaps / Honest Limitations
-
-- **Screenshots** are not yet included in the README — they need to be
-  captured from the app actually running on your machine, since the
-  brief is explicit that fabricated screenshots are not acceptable.
 - **Frontend has no automated tests** — only backend service-layer
   tests were required and implemented; the frontend relies on its UI
   validation plus manual end-to-end testing.
